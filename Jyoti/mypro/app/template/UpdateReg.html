@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body>
+<form action="/app/update/" method="POST">
+    {% csrf_token %}
+    <table>
+            {% for l in list %}
+        <tr>
+            <th><input type="hidden" name="id" value="{{l.id}}"> </th>
+        </tr>
+        <tr>
+        <th>First Name : </th>
+        <td><input type="text" name="firstName" value="{{l.firstName}}"></td>
+        </tr>
+        <tr>
+        <th>Last Name : </th>
+        <td><input type="text" name="lastName" value="{{l.lastName}}"></td>
+        </tr>
+        <tr>
+        <th>Email : </th>
+        <td><input type="text" name="login" value="{{l.email}}"></td>
+        </tr>
+        <tr>
+        <th>Password : </th>
+        <td><input type="password" name="password" value="{{l.password}}"></td>
+        </tr>
+        <tr>
+        <th>Mobile : </th>
+        <td><input type="text" name="mobileNum" value="{{l.mobileNum}}"></td>
+        </tr>
+        <tr>
+        <th></th>
+        <td><input type="submit" value="Submit"></td>
+        </tr>
+         {% endfor %}
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+     <style >
+     body {
+    background: linear-gradient(90deg , aqua, pink);
+   }
+
+
+h1   {color: red;}
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+form {padding:3%; margin:3%;}
+
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.button {
+ width: 170px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.button-1 {
+  border: 2px solid #3c73ff;
+  background-color: #3c73ff;
+  border-radius: 20px;
+  color: white;
+  transition: .3s;
+}
+.button-1:hover {
+  box-shadow: 8px 8px #99bdff;
+  transition: .3s;
+
+.cancelbtn {
+  background-color: red;
+}
+</style>
+        {% load static %}
+      {% include './header.html' %}
+
+</head>
+<body>
+
+
+
+<form method = "POST">
+{% csrf_token %}
+    <center>
+
+   <div class="container">
+    <label><b>UserName :</b></label>
+    <input type="text" placeholder="Enter Email Id" name="email"><br>
+
+    <label><b>Password :</b></label>
+    <input type="password" placeholder="Enter Password" name="password" maxlength="8" size="8"><br>
+
+     <a href="Forgot Password">Forgot Password?</a>
+  </div><br>
+
+        <button class="button button-1">Submit</button>
+
+
+
+   </center>
+
+</form>
+
+</body>
+  {% include './footer.html' %}
+</html>

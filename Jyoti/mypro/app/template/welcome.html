@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome</title>
+<style>
+    body {
+        background: linear-gradient(90deg , aqua, pink);
+   }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+img{
+        margin-left:200px;
+        font-size:25px;
+        float: right;
+        position:auto;
+}
+</style>
+      {% load static %}
+</head>
+<body>
+<img src="{% static '/rays.png' %}">
+{% if flag %}
+{% for l in list %}
+<h1>Hello, {{l.firstName }}{{l.lastName}} </h1>
+{% endfor %}
+{% else %}
+<h1>Hello, Guest</h1>
+{% endif %}
+<br><br><br>
+<hr>
+
+
+<ul>
+  <li><a href="app/dis">All Data</a></li>
+  <li><a href="app/reg">Add</a></li>
+  <li style="float:right"><a href="app/logout">Logout</a></li>
+</ul>
+
+
+
+
+</body>
+</html>
